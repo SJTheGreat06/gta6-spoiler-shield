@@ -2,20 +2,22 @@
 
 **A uBlock Origin filter list for everyone who can't play GTA VI yet.** If you're a PC player, you're waiting on the PC release, or you're just not ready to see anything, subscribe and the game stops showing up on your internet until you've played it.
 
-## ⚡ Subscribe in one click
-
-👉 **[Subscribe in uBlock Origin](https://subscribe.adblockplus.org/?location=https%3A%2F%2Fraw.githubusercontent.com%2FSJTheGreat06%2Fgta6-spoiler-shield%2Fmain%2Fgta6-spoilers.txt&title=GTA%20VI%20Spoiler%20Shield)**
-
-uBlock Origin will ask you to confirm the subscription.
-
-### Or add it manually
+## ⚡ Subscribe (30 seconds)
 
 1. Click the uBlock Origin icon, then the ⚙️ gear (Dashboard), then the **Filter lists** tab.
-2. Scroll to the bottom, open **Import…** and paste:
+2. Scroll to the bottom, tick **Import…** and paste this link:
    ```
    https://raw.githubusercontent.com/SJTheGreat06/gta6-spoiler-shield/main/gta6-spoilers.txt
    ```
-3. Click **Apply changes**.
+3. Click **Apply changes** at the top.
+
+You'll see **GTA VI Spoiler Shield** in the list under **Custom**. ✅
+
+### One-click shortcut
+
+👉 **[Subscribe in uBlock Origin](https://subscribe.adblockplus.org/?location=https%3A%2F%2Fraw.githubusercontent.com%2FSJTheGreat06%2Fgta6-spoiler-shield%2Fmain%2Fgta6-spoilers.txt&title=GTA%20VI%20Spoiler%20Shield)**
+
+Click it **on this GitHub page**. uBlock Origin catches the click and asks you to confirm. Don't copy it into your address bar: the old Adblock Plus subscribe site it points to no longer exists, so you'll get "Server Not Found". If that happens, use the steps above.
 
 The list checks for updates every 12 hours, so new leak sites get blocked as they're added.
 
