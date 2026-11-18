@@ -1,0 +1,65 @@
+! Title: GTA VI Spoiler Shield
+! Description: Hides GTA VI news, videos, posts, leaks and spoilers across YouTube, Google, Reddit, X, socials and gaming sites — for everyone who can't play it yet.
+! Version: 1.0.0
+! Expires: 12 hours
+! Homepage: https://github.com/SJTheGreat06/gta6-spoiler-shield
+! License: MIT
+! Syntax: uBlock Origin
+!
+! Keywords caught (case-insensitive): GTA 6 / GTA VI / GTA6 / GTAVI / #GTA6 / GTA: VI /
+! Grand Theft Auto VI / Grand Theft Auto 6 / Leonida / Vice City / Jason & Lucia /
+! Lucia Caminos / Jason Duval / Rockstar Games
+! Not caught: GTA 5, GTA V, GTA Online, "gtavideos", GTA 60fps, etc.
+!
+! Unsubscribe the day you get to play it. Welcome to the club.
+
+! ==========================================================================
+! 1. Whole sites that will be wall-to-wall spoilers
+! ==========================================================================
+||rockstargames.com^$doc
+||rockstarnewswire.com^$doc
+||gtaforums.com^$doc
+||gtabase.com^$doc
+||reddit.com/r/GTA6^$doc
+||reddit.com/r/GTAVI^$doc
+||reddit.com/r/GTA^$doc
+||reddit.com/r/GTA6_leaks^$doc
+||reddit.com/r/rockstar^$doc
+||reddit.com/r/GamingLeaksAndRumours^$doc
+
+! ==========================================================================
+! 2. Any page whose address mentions it (searches, article slugs, video pages)
+!    e.g. google.com/search?q=gta+6  youtube.com/results?search_query=gta%20vi
+!    site.com/grand-theft-auto-vi-review
+! ==========================================================================
+/(gta|grand[-_+.]*theft[-_+.]*auto)([-_+.]|%20|%3A)*(6|vi)(?![a-z0-9])/$doc
+
+! ==========================================================================
+! 3. YouTube: home, search, sidebar, Shorts, comments, community, notifications
+! ==========================================================================
+youtube.com##:is(ytd-rich-item-renderer,ytd-video-renderer,ytd-compact-video-renderer,ytd-grid-video-renderer,ytd-reel-item-renderer,ytd-playlist-renderer,ytd-radio-renderer,ytd-channel-renderer,ytd-comment-thread-renderer,ytd-post-renderer,ytd-backstage-post-thread-renderer,ytd-notification-renderer,ytm-shorts-lockup-view-model,ytm-shorts-lockup-view-model-v2,yt-lockup-view-model,ytd-universal-watch-card-renderer,ytd-search-refinement-card-renderer,ytd-movie-renderer):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
+! A video page you landed on anyway (hides the player + page)
+youtube.com##ytd-watch-flexy:has(#title:has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|rockstar\s*games/i))
+m.youtube.com##:is(ytm-video-with-context-renderer,ytm-compact-video-renderer,ytm-shorts-lockup-view-model,ytm-rich-item-renderer,ytm-comment-thread-renderer):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
+
+! ==========================================================================
+! 4. Search engines: results, Top stories, People also ask, autocomplete
+! ==========================================================================
+google.*##:is(div.MjjYud,div.g,g-inner-card,.related-question-pair,g-section-with-header,div[role="listitem"],ul[role="listbox"] li,article):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
+bing.com,msn.com##:is(li.b_algo,.na_card,.b_ans,article,li,[role="listitem"]):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
+duckduckgo.com##:is(article,li[data-layout],.module--carousel__item):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
+
+! ==========================================================================
+! 5. Reddit (new + old)
+! ==========================================================================
+reddit.com##:is(shreddit-post,shreddit-comment,article,li,.thing):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
+
+! ==========================================================================
+! 6. X / Twitter: timeline, replies, trends
+! ==========================================================================
+x.com,twitter.com##:is([data-testid="cellInnerDiv"],[data-testid="trend"],article):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
+
+! ==========================================================================
+! 7. Socials, streaming, stores, gaming news
+! ==========================================================================
+instagram.com,facebook.com,threads.net,threads.com,bsky.app,tiktok.com,twitch.tv,kick.com,steamcommunity.com,store.steampowered.com,discord.com,news.google.com,ign.com,gamespot.com,kotaku.com,polygon.com,pcgamer.com,eurogamer.net,gamesradar.com,thegamer.com,gamerant.com,videogameschronicle.com,theverge.com,9gag.com##:is(article,[role="article"],[role="listitem"],li,[class*="message"],[class*="card"]):has-text(/(gta|grand\s*theft\s*auto)[\s._:-]*(6|vi)(?![a-z0-9])|leonida|vice\s*city|lucia\s+caminos|jason\s+duval|jason\s*(&|and)\s*lucia|rockstar\s*games/i)
